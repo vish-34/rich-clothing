@@ -2,16 +2,6 @@ import React, { useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Menu, Search, ShoppingBag, User } from "lucide-react";
 
-// Award-winning, single-file React + Tailwind landing page for a premium clothing brand.
-// ENHANCEMENTS:
-// - Fluid scroll-based animations (staggered reveals).
-// - Interactive glowing cursor follower for a premium feel.
-// - Refined color palette and component aesthetics (glows, softer gradients).
-// - Dynamic, asymmetrical layouts for visual interest.
-// - Parallax horizontal scroll for the lookbook.
-// - Added icons and improved navigation.
-// - Better code structure with internal components.
-
 export default function PremiumClothLandingV2() {
   // --- STATE & EFFECTS --- //
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -55,8 +45,8 @@ export default function PremiumClothLandingV2() {
   const trends = [ "Oversized Tailoring", "Neutral Layers", "Textured Knits", "Monochrome Suits" ];
   
   const lookbookImages = [
-    "https://images.unsplash.com/photo-1532303229345-20d1d32938b3?q=80&w=1920&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1617127365659-3c4b6933361a?q=80&w=1920&auto=format&fit=crop",
+    "https://i.pinimg.com/736x/91/d5/16/91d5164c7b5f674fe440e708c52f19d9.jpg",
+    "https://i.pinimg.com/736x/49/8e/88/498e880248daeefec72cbae4d27c2e10.jpg",
     "https://images.unsplash.com/photo-1504593811423-6dd665756598?q=80&w=1920&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?q=80&w=1920&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1603251578711-32d143a55922?q=80&w=1920&auto=format&fit=crop",
@@ -125,7 +115,7 @@ export default function PremiumClothLandingV2() {
 const Navbar = () => (
   <nav className="fixed top-0 left-0 right-0 z-50 p-4 backdrop-blur-md bg-black/10">
     <div className="container mx-auto flex items-center justify-between">
-      <a href="#" className="brand-heading text-2xl" style={{color: 'var(--accent)'}}>RASE</a>
+      <a href="#" className="brand-heading text-2xl" style={{color: 'var(--accent)'}}>Rich-Clothing</a>
       <div className="hidden md:flex items-center gap-8 text-sm text-gray-300">
         {["Collections", "Upcoming", "Trends", "Lookbook"].map(item => (
           <a key={item} href={`#${item.toLowerCase()}`} className="hover:text-white transition-colors relative group">
@@ -323,7 +313,7 @@ const Lookbook = ({ images }) => {
             <div ref={galleryRef} className="overflow-x-scroll hide-scrollbar h-[500px] relative">
                 <motion.div style={{ x }} className="flex gap-6 h-full w-[300%]">
                     {images.map((src, i) => (
-                        <div key={i} className="w-1/6 h-full flex-shrink-0">
+                        <div key={i} className="w-1/6 h-full flex-shrink-0 object-fit">
                             <div className="w-full h-full rounded-lg overflow-hidden border border-white/10">
                                 <img src={src} alt={`Lookbook ${i + 1}`} className="w-full h-full object-cover"/>
                             </div>
